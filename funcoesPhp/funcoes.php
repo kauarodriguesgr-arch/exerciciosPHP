@@ -142,5 +142,161 @@
             return $this->resultado;
         }//fim do método
 
+        public function calcularSalarioMensal(float $valorHora, float $horasTrabalhadas){
+            $this->resultado = $valorHora * $horasTrabalhadas;
+            return $this->resultado;
+        }//fim do método
+
+        public function converterIdadeEmDias(int $idade){
+            $this->resultado = $idade * 365;
+            return $this->resultado;
+        }//fim do método
+
+        public function calcularTempoRestante(int $idade){
+            $anosRestantes = 100 - $idade;
+            $diasRestantes = $anosRestantes * 365;
+            return $diasRestantes;
+        }//fim do método
+
+        public function mediaTresValores(float $valor1, float $valor2, float $valor3){
+            $this->resultado = ($valor1 + $valor2 + $valor3)/3;
+            return $this->resultado;
+        }//fim do método
+
+        public function metrosEmCentimetros(float $metros){
+            $this->resultado = $metros * 100;
+            return $this->resultado;
+        }//fim do método
+
+        public function calcularAreaTrapezio(float $baseMaior, float $baseMenor, float $altura){
+            $this->resultado = (($baseMaior + $baseMenor) * $altura) / 2;
+            return $this->resultado;
+        }//fim do método
+
+        public function diasEmSegundos(int $dias){
+            $this->resultado = $dias * 24 * 60 * 60;
+            return $this->resultado;
+        }//fim do método
+
+        public function somarDigitos(int $numero){
+            $soma = 0;
+            while($numero > 0){
+                $soma += $numero % 10;
+                $numero = (int)($numero / 10);
+            }
+            return $soma;
+        }//fim do método
+
+        public function inversoMultiplicativo(float $numero){
+            if($numero != 0){
+                $this->resultado = 1 / $numero;
+                return $this->resultado;
+            } else {
+                return "Erro: Não é possível calcular o inverso multiplicativo de zero.";
+            }
+        }//fim do método
+
+        public function calcularHipotenusa(float $cateto1, float $cateto2){
+            $this->resultado = sqrt(pow($cateto1, 2) + pow($cateto2, 2));
+            return $this->resultado;
+        }//fim do método
+
+        public function decimalParaBinario(int $numero){
+            if($numero < 0){
+                return "Erro: Número negativo não pode ser convertido para binário.";
+            }
+            $binario = "";
+            do {
+                $binario = ($numero % 2) . $binario;
+                $numero = (int)($numero / 2);
+            } while ($numero > 0);
+            return $binario;
+        }//fim do método
+
+        public function dechex(int $numero){
+            if($numero < 0){
+                return "Erro: Número negativo não pode ser convertido para hexadecimal.";
+            }
+            $hexadecimal = "";
+            $hexChars = "0123456789ABCDEF";
+            do {
+                $hexadecimal = $hexChars[$numero % 16] . $hexadecimal;
+                $numero = (int)($numero / 16);
+            } while ($numero > 0);
+            return $hexadecimal;
+        }//fim do método
+
+        public function raizCubica(float $numero){
+            if($numero < 0){
+                return "Erro: Número negativo não pode ter raiz cúbica real.";
+            }
+            $this->resultado = pow($numero, 1/3);
+            return $this->resultado;
+        }//fim do método
+
+        public function calcularMontanteJurosSimples(float $capital, float $taxa, float $tempo){
+            $this->resultado = $capital * (1 + ($taxa * $tempo));
+            return $this->resultado;
+        }//fim do método
+
+        public function calcularMontanteJurosCompostos(float $capital, float $taxa, float $tempo){
+            $this->resultado = $capital * pow((1 + $taxa), $tempo);
+            return $this->resultado;
+        }//fim do método
+
+        public function grausParaRadianos(float $graus){
+            $this->resultado = $graus * (pi() / 180);
+            return $this->resultado;
+        }//fim do método
+
+        public function calcularPorcentagem(float $valor, float $porcentagem){
+            $this->resultado = ($valor * $porcentagem) / 100;
+            return $this->resultado;
+        }//fim do método
+
+        public function mediaPonderada(float $nota1, float $peso1, float $nota2, float $peso2){
+            $this->resultado = (($nota1 * $peso1) + ($nota2 * $peso2)) / ($peso1 + $peso2);
+            return $this->resultado;
+        }//fim do método
+
+        public function partesInteiraDecimal(float $numero){
+            $parteInteira = (int)$numero;
+            $parteDecimal = $numero - $parteInteira;
+            return ["inteira" => $parteInteira, "decimal" => $parteDecimal];
+        }//fim do método
+
+        public function adicionarRendimento(float $saldo){
+            $this->resultado = $saldo * 1.05; // Adiciona 5% de rendimento
+            return $this->resultado;
+        }//fim do método
+
+        public function calcularGastoEnergia(float $potencia, float $tempo, float $custoPorKwh){
+            $energiaConsumida = ($potencia * $tempo) / 1000; // Convertendo para kWh
+            $this->resultado = $energiaConsumida * $custoPorKwh;
+            return $this->resultado;
+        }//fim do método
+
+        public function farenheitParaCelsius(float $farenheit){
+            $this->resultado = ($farenheit - 32) * 5/9;
+            return $this->resultado;
+        }//fim do método
+
+        public function calcularDensidade(float $massa, float $volume){
+            if($volume <= 0){
+                return "Erro: O volume deve ser maior que zero.";
+            }
+            $this->resultado = $massa / $volume;
+            return $this->resultado;
+        }//fim do método
+
+        public function multiploMaisProximoDe10(int $numero){
+            $resto = $numero % 10;
+            if($resto < 5){
+                return $numero - $resto; // arredonda para baixo
+            } else {
+                return $numero + (10 - $resto); // arredonda para cima
+            }
+        }//fim do método
+
     }//fim da Classe
 ?>    
