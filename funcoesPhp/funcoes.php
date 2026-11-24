@@ -298,5 +298,50 @@
             }
         }//fim do método
 
+        public function valorEmOctal(int $numero){
+            if($numero < 0){
+                return "Erro: Número negativo não pode ser convertido para octal.";
+            }
+            $octal = "";
+            do {
+                $octal = ($numero % 8) . $octal;
+                $numero = (int)($numero / 8);
+            } while ($numero > 0);
+            return $octal;
+        }//fim do método
+
+        public function exibirCrescente(int $numero){
+            if($numero < 1){
+                return "Erro: O número deve ser inteiro positivo.";
+            }
+            $resultado = "";
+            for($i = 1; $i <= $numero; $i++){
+                $resultado .= $i . " ";
+            }
+            return ($resultado);
+        }//fim do método
+
+        public function contagemRegressiva(int $numero){
+            if($numero < 0){
+                return "Erro: O número deve ser inteiro não-negativo.";
+            }
+            $resultado = "";
+            for($i = $numero; $i >= 0; $i--){
+                $resultado .= $i . " ";
+            }
+            return ($resultado);
+        }//fim do método
+
+        public function somarNumerosInteirosAteN(int $n){
+            if($n < 1){
+                return "Erro: O número deve ser inteiro positivo.";
+            }
+            $soma = 0;
+            for($i = 1; $i <= $n; $i++){
+                $soma += $i;
+            }
+            return $soma;
+        }//fim do método
+
     }//fim da Classe
 ?>    

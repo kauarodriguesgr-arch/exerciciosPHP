@@ -54,5 +54,12 @@
     <button><a href="php/exercicio36.php">Exercicio36</a></button><br>
     <button><a href="php/exercicio37.php">Exercicio37</a></button><br>
     <button><a href="php/exercicio38.php">Exercicio38</a></button><br>
+    <button><a href="php/exercicio39.php">Exercicio39</a></button><br>
+    <button><a href="php/exercicio40.php">Exercicio40</a></button><br>
+    <br><br>
+    <h1>Repetição</h1><br><br>
+    <button><a href="repetição/crescente.php">Crescente</a></button><br>
+    <button><a href="repetição/regressiva.php">Contagem Regressiva</a></button><br>
+    <button><a href="repetição/somados.php">Soma dos números inteiros</a></button><br>
 </body>
 </html>
